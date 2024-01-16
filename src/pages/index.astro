@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Showcase from '../components/Showcase.astro';
+import Features from '../components/Features.astro';
 const name = 'Astro';
 const style = 'purple';
 const visible = false;
@@ -19,6 +20,8 @@ const users = await response.json();
   {visible ? <p>I am visible</p> : <p>I am not visible</p>}
 
   <Showcase />
+
+  <Features />
 
   <style>
     h1 {
