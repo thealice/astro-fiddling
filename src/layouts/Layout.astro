@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
+import { fade } from 'astro:transitions';
 import '../styles/global.css';
 export interface Props {
   title?: string;
@@ -25,9 +26,10 @@ const { title = 'Astro Crash Course' } = Astro.props;
     <title>{title}</title>
     <ViewTransitions />
   </head>
+
   <body
     class='bg-theme-base text-theme-900'
-    transition:animate='fade'
+    transition:animate={fade({ duration: '0.4s' })}
     data-theme-toggle
     aria-label='toggle theme'
   >
