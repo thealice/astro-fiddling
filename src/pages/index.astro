@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Showcase from '../components/Showcase.astro';
 import Features from '../components/Features.astro';
+import Tabs from '../components/Tabs.astro';
+import Test from '../components/Test.astro';
+
 const name = 'Astro';
 const style = 'purple';
 const visible = false;
@@ -22,13 +25,16 @@ const users = await response.json();
   <Showcase />
 
   <Features />
-
-  <style>
-    h1 {
-      color: red;
-    }
-    .purple {
-      color: purple;
-    }
-  </style>
+  <section class='page-content'>
+    <div class='container'>
+      <Tabs
+        headings={['NPM', 'PNPM', 'YARN']}
+        contents={[
+          '$ npm create astro@latest',
+          '$ pnpm create astro@latest',
+          '$ yarn create astro',
+        ]}
+      />
+    </div>
+  </section>
 </Layout>

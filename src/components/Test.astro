@@ -1,0 +1,12 @@
+---
+export interface Props {
+  healthy?: boolean;
+  color: string;
+}
+
+const { healthy = false, color } = Astro.props as Props;
+---
+
+<div>
+  {healthy ? <p>healthy</p> : <p style={`color: ${color};`}>not healthy</p>}
+</div>
