@@ -1,6 +1,6 @@
 ---
-import { Image } from 'astro:assets';
 import logo from '../images/logo.svg';
+import { Icon } from 'astro-icon/components';
 ---
 
 <header class='header'>
@@ -10,12 +10,20 @@ import logo from '../images/logo.svg';
         <img src={logo.src} alt='' />
       </a>
     </div>
-    <nav>
+    <nav transition:persist='navigation'>
       <ul>
         <li><a href='/'>Home</a></li>
         <li><a href='/about'>About</a></li>
         <li><a href='/blog'>Blog</a></li>
       </ul>
+      <button
+        class='flex m-auto px-2 items-center rounded bg-theme-100 hover:bg-theme-200'
+        data-theme-toggle
+        aria-label='toggle theme'
+      >
+        <span class='flex items-center'>Toggle theme</span>
+        <Icon name='bx:bxs-sun' class='w-4 h-4 text-theme-800' />
+      </button>
     </nav>
   </div>
 </header>
