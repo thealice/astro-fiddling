@@ -29,12 +29,13 @@ const { title = 'Astro Crash Course' } = Astro.props;
 
   <body
     class='bg-theme-base text-theme-900'
-    transition:animate={fade({ duration: '0.4s' })}
     data-theme-toggle
     aria-label='toggle theme'
   >
     <Header />
-    <slot />
+    <main transition:animate={fade({ duration: '0.3s' })}>
+      <slot />
+    </main>
     <Footer />
     <script>
       const themeToggles = document.querySelectorAll('[data-theme-toggle]');
